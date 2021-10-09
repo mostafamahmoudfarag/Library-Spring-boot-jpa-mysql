@@ -67,4 +67,13 @@ public class maincontroller {
 		return  "index";
 	}
 
+	@RequestMapping("/books")
+	public List<Book> getbooks()
+	{	return s.findallbooks();	
+	}
+	@RequestMapping("/book/{id}")
+	public void delete(@PathVariable("id") int id)
+	{
+	s.remove(id);
+	}
 }
